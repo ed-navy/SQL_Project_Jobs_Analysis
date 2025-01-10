@@ -1,0 +1,21 @@
+
+SELECT * , 
+    CONCAT('Hello', ' ', 'World') AS concat,
+    SUBSTR('PostgreSQL String Function', 1, 10) AS substring,
+    TRIM('  SQL Function  ') AS trimmed_string,
+    TRIM('X' FROM 'XXXPostgresXXX') AS trimmed_string,
+    LENGTH('Postgres') AS string_length,
+    REPLACE('PostgreSQL is great', 'great', 'powerful') AS replaced_string
+
+
+
+
+FROM skills_job_dim
+LIMIT 100;
+
+-- extracts the website address from the link column
+SELECT *, SUBSTRING(link, POSITION('.' in link)+1)
+FROM company_dim
+LIMIT 10
+
+
